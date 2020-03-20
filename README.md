@@ -45,6 +45,8 @@ We'll add a DELETE button for each Movie row in the list:
     </tr>
     {% endfor %}
     ```
+    
+    - NOTE: we are passing 2 GET variables in this link `action=deleteMovie` and `id={{ movie.id }}`, which will give a link passing the ID of each Movie, e.g. for Movie with ID=1 the link will be `/index.php?action=deleteMovie&id=1`
 
 - create a new controller class `MovieController` for working with Movie action, and move the `listMovies()` method from `MainController` into that class. We'll also create a private instance variable `$this->movieRepository` since most most methods will need to use an instance-object of the `MovieRepository` class:
 
